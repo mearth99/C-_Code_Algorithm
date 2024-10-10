@@ -79,7 +79,7 @@ vector<int> depth;
 vector<vector<int>> parents;
 int N, M, par, chi;
 int maxnode = 0;
-int LCA_Upgrade(int a, int b) {
+int LCA_Query(int a, int b) {
     if (depth[a] < depth[b]) {
         swap(a, b);
     }
@@ -132,7 +132,7 @@ void solution() {
     for (int i = 0; i < M; i++) {
         int from, to;
         cin >> from >> to;
-        cout << LCA_Upgrade(from, to) << '\n';
+        cout << LCA_Query(from, to) << '\n';
     }
 
     for (int i = 0; i <= N; i++) graph[i].clear();
